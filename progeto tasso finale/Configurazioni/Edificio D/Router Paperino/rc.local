@@ -1,0 +1,7 @@
+//DMZ
+ifconfig eth1 192.168.44.16 netmask 255.255.255.0 broadcast 192.168.44.21
+
+//verso internet
+ifconfig eth0 148.233.44.15 netmask 255.255.255.0 broadcast 148.233.44.255
+
+route add default gw 192.168.44.21

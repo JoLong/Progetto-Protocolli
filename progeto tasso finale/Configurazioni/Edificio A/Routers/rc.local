@@ -1,0 +1,13 @@
+# Configurazione interfacce
+
+//ufficio Ricerca e Sviluppo (Piano Terra)
+ifconfig eth0 192.168.35.255 netmask 255.255.255.0 broadcast 192.168.35.255
+
+//ufficio Ricerca e Sviluppo (Primo Piano)
+ifconfig eth1 192.168.36.255 netmask 255.255.255.0 broadcast 192.168.36.255
+
+//verso Paperone (Edificio B)
+ifconfig eth2 192.168.5.2 netmask 255.255.255.0 broadcast 192.168.5.2
+
+//verso Paperoga (Edificio D)
+ifconfig eth3 192.168.5.3 netmask 255.255.255.0 broadcast 192.168.5.3

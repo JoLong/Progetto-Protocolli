@@ -1,0 +1,22 @@
+# Configurazione interfacce
+
+//ufficio Marketing (Piano Terra)
+ifconfig eth0 192.168.45.255 netmask 255.255.255.0 broadcast 192.168.45.255
+
+//ufficio Marketing (Primo Piano)
+ifconfig eth1 192.168.46.255 netmask 255.255.255.0 broadcast 192.168.46.255
+
+//ufficio Marketing (Secondo Piano)
+ifconfig eth2 192.168.47.255 netmask 255.255.255.0 broadcast 192.168.47.255
+
+//verso Pippo (Edificio A)
+ifconfig eth3 192.168.6.2 netmask 255.255.255.0 broadcast 192.168.6.2
+
+//verso Topolino (Edificio C)
+ifconfig eth4 192.168.6.3 netmask 255.255.255.0 broadcast 192.168.6.3
+
+//verso Paperoga (Edificio D)
+ifconfig eth5 192.168.6.5 netmask 255.255.255.0 broadcast 192.168.6.5
+
+//verso Pluto (Edificio E)
+ifconfig eth6 192.168.6.4 netmask 255.255.255.0 broadcast 192.168.6.4

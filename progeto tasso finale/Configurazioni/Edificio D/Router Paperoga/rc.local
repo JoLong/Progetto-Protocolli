@@ -1,0 +1,16 @@
+//Ufficio Amministrazione
+ifconfig eth0 192.168.41.255 netmask 255.255.255.0 broadcast 192.168.41.255
+ifconfig eth1 192.168.42.255 netmask 255.255.255.0 broadcast 192.168.42.255
+ifconfig eth2 192.168.43.255 netmask 255.255.255.0 broadcast 192.168.43.255
+ifconfig eth3 192.168.44.255 netmask 255.255.255.0 broadcast 192.168.44.255
+
+//verso Pippo Edificio A
+ifconfig eth4 192.168.9.3 netmask 255.255.255.0 broadcast 192.168.9.255
+
+//verso Paperone Edificio B
+ifconfig eth5 192.168.9.4 netmask 255.255.255.0 broadcast 192.168.9.255
+
+//verso Topolino Edificio C
+ifconfig eth6 192.168.10.3 netmask 255.255.255.0 broadcast 192.168.10.255
+
+route add default gw 192.168.44.16

@@ -1,0 +1,1 @@
+ALL: .AziendaTrusted.it EXCEPT in.telnetd

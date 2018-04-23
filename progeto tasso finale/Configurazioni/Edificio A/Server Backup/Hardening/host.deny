@@ -1,0 +1,1 @@
+ALL:ALL: spawn /bin/date %c >> /var/log/access_deny.log

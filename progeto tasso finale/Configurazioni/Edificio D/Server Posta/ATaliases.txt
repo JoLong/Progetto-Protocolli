@@ -1,0 +1,16 @@
+#DIRECTORY = /etc/ATaliases
+#sendmail non usa questo file direttamente, ma questo viene prima processato con il comando "newaliases" o "sendmail -bi"
+
+//tramite "aliases" le mail mandate ad un indirizzo specifico vengono ridirezionate ad un'altra parte.
+//Pertanto in tale file vengono forniti degli alias ed i relativi indirizzi assegnati ad essi.
+
+# Alias amministratori
+admin_uffici_ricercaesviluppo: Joshua.Longetti@AziendaTrusted.it
+admin_uffici_marketing: Joshua.Longetti@AziendaTrusted.it
+admin_uffici_ricevimento: Joshua.Longetti@AziendaTrusted.it
+
+admin_uffici_amministrazione: Leonardo.Giannoni@AziendaTrusted.it
+admin_uffici_legale: Leonardo.Giannoni@AziendaTrusted.it
+
+# Mailing list per gli amministratori
+admins: Leonardo.Giannoni@AziendaTrusted.it, Joshua.Longetti@AziendaTrusted.it

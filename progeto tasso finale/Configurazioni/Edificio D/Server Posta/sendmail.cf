@@ -1,0 +1,73 @@
+#DIRECTORY = /etc/sendmail.cf
+
+# File di riferimento:
+/etc/sendmail.cf
+
+# DEFINIZIONE MACRO UTENTE			
+Dwmail                                          # hostname
+DDAziendaTrusted.it                             # dominio
+Dj$w.$DD                                        # nome del dominio ufficiale del sito
+De$j Sendmail $v ready at $b                    # messaggio iniziale SMTP
+DlFrom $g $d                                    # formato della UNIX from line
+DnMAILER-DAEMON                                 # nome usato nei messaggi d'errore
+Do.:%\@!^=/                                     # operatori negli indirizzi
+Dq$g$?x ($x)$.                                  # formato dell'indirizzo di default del mittente
+
+# TRUSTED USERS #definisce una lista di utenze fidate che possono cambiare l'indirizzo del mittente usando il flag -f
+Troot
+Tdaemon
+Tuucp
+
+
+# precedenze di default, numeri piu alti significano precedenza piu alta
+Pfirst-class=0
+Pspecial-delivery=100
+Plist=-30 # priorità che riguarda una email mandata ad una lista di indirizzi
+Pbulk=-60 # bulk sta per un tipo di email che viene mandato ad un grande gruppo di indirizzi
+Pjunk=-100
+
+# OPZIONI
+OA=/etc/ATaliases                               # directory del file per gli aliases
+OErrorHeader=text                               # stampa informazioni nel caso di errore sull'header   
+OF=0600                                         # permessi file temporanei
+OHman=/usr/lib/sendmail.hf                      # path del file di aiuto
+OQueueDirectory=/var/spool/mqueue               # path coda
+OTimeout.queuereturn=5d                         # tempo di coda
+OTimeout.queuewarn=4h                           # tempo del warning
+OStatusFile=/var/tmp/sendmail.st                # path status file
+
+OHostsFile=/etc/hosts                           # path file hosts
+OPrivacyOptions=authwarnings,noexpn,novrfy     	# impedisce agli spammer di usare i comandi EXPN e VRFY
+
+# FORMATO INTESTAZIONI
+Hmail cst 
+H?P?Return-Path: <$g>                           # path mailer
+HReceived: $?sfrom $s $.by $j ($v/$Z)           # ricevuto da
+H?D?Resent-Date: $b                             # data e ora del reinvio 
+H?D?Date: $b                                    # data e ora dell'invio  
+H?F?Resent-From: $q                             # rimandato da -- indirizzo del mittente 
+H?F?From: $q                                    # indirizzo del mittente 
+H?x?Full-Name: $x                               # nome completo del mittente 
+HSubject:                                       # oggetto
+H?M?Resent-Message-Id: <$t.$i@$j>               # id del messaggio reinviato 
+H?M?Message-Id: <$t.$i@$j>                      # id del messaggio 
+
+# MAILER definizioni standard
+# spedizione di posta locale (obbligatoria)
+Mlocal, P=/bin/mail, F=rlsDFMmn, S=10, R=20, A=mail -d $u
+# spedizione a programmi (obbligatoria)
+Mprog, P=/bin/sh, F=lsDFMe, S=10, R=20, A=sh -c $u
+# posta tcp/ip al dominio local
+Mtcpld, P=[ICP], F=mDFMueXLC, S=17, R=27, A=IPC $h, E=\r\n
+# posta tcp/ip a Internet
+Mtcp, P=[ICP], F=mDFMueXLC, S=14, R=24, A=IPC $h, E=\r\n
+# posta uucp
+Muucp, P=/usr/bin/uux, F=DFMhuU, S=13, R=23, M=100000,
+A=uux - -r -z -a$f -gC $h!rmail ($u)
+
+
+
+
+##Sendmail permette attraverso il comando VRFY la verifica di indirizzi email residenti sul server di posta.
+##Dal momento che viene spesso usato per scopi di intrusione e spam, è opportuno disabilitare questa funzione per prevenire attacchi del genere. Un'altro utile comando che può essere usato per scopi ostili, è EXPN, con cui si visualizzano tutti gli indirizzi email membri di una lista.
+##questo potrebbe essere usato per scopi di spamming, perciò, in molte configurazioni predefinite di Sendmail recenti, l'uso di questi comandi è già disabilitato di default, però abbiamo voluto scriverlo per dimostrare la sua impostazione

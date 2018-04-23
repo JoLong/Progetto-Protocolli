@@ -1,0 +1,18 @@
+$TTL 1D
+$ORIGIN Marketing3.AziendaTrusted.it ;
+@	IN	SOA	dns.Ricevimento2.AziendaTrusted.it. Joshua.Longetti@AziendaTrusted.it (
+				2018112501   ; serial
+				3H           ; refresh
+				1H           ; retry
+				1W           ; expire
+				1D )         ; minimum
+# DNS e mail
+	IN	NS	dns.AziendaTrusted.it
+	IN	NS	dns.Ricevimento2.AziendaTrusted.it
+	IN	MX	10 mail.AziendaTrusted.it
+
+# Router
+router	IN	A	192.168.47.255
+
+# Hosts
+host	IN	A	192.168.47.2

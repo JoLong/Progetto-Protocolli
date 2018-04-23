@@ -1,0 +1,13 @@
+# Configurazione interfacce
+
+//ufficio Legale (Piano Terra)
+ifconfig eth0 192.168.37.255 netmask 255.255.255.0 broadcast 192.168.37.255
+
+//ufficio Legale (Primo Piano)
+ifconfig eth1 192.168.38.255 netmask 255.255.255.0 broadcast 192.168.38.255
+
+//verso Paperone (Edificio B)
+ifconfig eth2 192.168.7.2 netmask 255.255.255.0 broadcast 192.168.7.2
+
+//verso Topolino (Edificio C)
+ifconfig eth3 192.168.7.3 netmask 255.255.255.0 broadcast 192.168.7.3

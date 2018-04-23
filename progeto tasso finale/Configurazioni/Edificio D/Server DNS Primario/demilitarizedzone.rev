@@ -1,0 +1,21 @@
+$TTL 86400
+@	IN	SOA	dns.AziendaTrusted.it.	Joshua.Longetti@AziendaTrusted.it (
+				2018112501   ; serial#
+				36000        ; refresh after 10 hours
+				3600         ; retry after 1 hour
+				3600000      ; expire after 1000 hours
+				36000 )      ; default ttl, 10 hours
+# DNS e mail
+	IN	NS	dns.AziendaTrusted.it
+	IN	NS	dns.ricevimento2.AziendaTrusted.it
+	IN	MX	10 mail.AziendaTrusted.it
+
+# Servers
+17	IN	PTR	dns.AziendaTrusted.it.
+18	IN	MX	mail.AziendaTrusted.it.
+19	IN	PTR	proxy.AziendaTrusted.it.
+20	IN	PTR	www.AziendaTrusted.it.
+
+# Routers
+21	IN	PTR	introuter.AziendaTrusted.it.
+16	IN	PTR	extrouter.AziendaTrusted.it.

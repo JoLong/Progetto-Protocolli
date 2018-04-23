@@ -1,0 +1,16 @@
+# Configurazione interfacce
+
+//ufficio Ricevimento (Piano Servizi)
+ifconfig eth0 192.168.40.255 netmask 255.255.255.0 broadcast 192.168.40.255
+
+//ufficio Ricevimento (Primo Piano)
+ifconfig eth1 192.168.39.255 netmask 255.255.255.0 broadcast 192.168.39.255
+
+//verso Paperone (Edificio B)
+ifconfig eth2 192.168.8.2 netmask 255.255.255.0 broadcast 192.168.8.2
+
+//verso Paperoga (Edificio D)
+ifconfig eth3 192.168.8.4 netmask 255.255.255.0 broadcast 192.168.8.4
+
+//verso Pluto (Edificio E)
+ifconfig eth4 192.168.8.3 netmask 255.255.255.0 broadcast 192.168.8.3
